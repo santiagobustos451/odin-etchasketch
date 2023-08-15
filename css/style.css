@@ -1,0 +1,31 @@
+*:root {
+    --grid-cells: 16;
+    --grid-size: 32rem;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: var(--grid-size);
+}
+
+.cell:nth-child(16n){
+    border-right: none;
+}
+
+.cell:nth-child(1n + 241){
+    border-bottom: none;
+}
+
+.cell {
+    border-bottom: solid 1px rgba(0,0,0,0.5);
+    border-right: solid 1px rgba(0,0,0,0.5);
+    box-sizing: border-box;
+    width: calc(var(--grid-size) / var(--grid-cells));
+    height: calc(var(--grid-size) / var(--grid-cells));
+    transition: all ease-in-out 50ms;
+}
+
+.cell:hover {
+    background-color: rgba(0,0,0,0.5);
+}
