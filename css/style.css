@@ -1,19 +1,101 @@
 *:root {
     --grid-cells: 16;
     --grid-size: 32rem;
+    font-family: sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.controls {
+    width: calc(var(--grid-size) / 2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button,input {
+    background-color: white;
+    border: 1px solid black;
+    margin-bottom: .3rem;
+    width: 100%;
+    padding: 1rem;
+}
+
+input{
+    height: 5rem;
+}
+
+.recent-colors-container{
+    box-sizing: border-box;
+    border: 1px solid black;
+    overflow-y: scroll;
+    width: 100%;
+    height: 5rem;
+}
+
+.recent-colors{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.recent-colors *{
+    cursor: pointer;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+button:hover,input:hover{
+    color: white;
+    background-color: gray;
+}
+
+button.selected{
+    background-color: black;
+    color: white;
+}
+
+.title{
+    font-weight: bold;
+    margin-bottom: 1rem;
 }
 
 .grid {
+    border: 1rem solid black;
     display: flex;
-    flex-wrap: wrap;
-    width: var(--grid-size);
+    flex-direction: column;
+    width: fit-content;
 }
 
-.cell:nth-child(16n){
+.row{
+    display: flex;
+}
+
+.cell:last-child{
     border-right: none;
 }
 
-.cell:nth-child(1n + 241){
+.row:last-child .cell{
     border-bottom: none;
 }
 
@@ -24,8 +106,36 @@
     width: calc(var(--grid-size) / var(--grid-cells));
     height: calc(var(--grid-size) / var(--grid-cells));
     transition: all ease-in-out 50ms;
+    background-color: rgb(255,255,255);
 }
 
 .cell:hover {
     background-color: rgba(0,0,0,0.5);
 }
+
+/* Base styling */
+input[type="range"] {
+    width: 70%;
+    appearance: none;
+    height: .2rem; /* Set height of the track */
+    padding: 0;
+    margin: 1rem;
+    background-color: darkgray;
+    border: none;
+  }
+  
+  /* Thumb styling */
+  input[type="range"]::-webkit-slider-thumb, input[type="range"]::-moz-range-thumb {
+    appearance: none; /* Hide default appearance */
+    width: .4rem; /* Width of the thumb */
+    height: 1rem; /* Height of the thumb */
+    background: #333; /* Color of the thumb */
+    border-radius: 5%; /* Rounded shape for the thumb */
+    cursor: pointer; /* Change cursor on hover */
+  }
+
+  #input-size-label {
+    margin: 0;
+    margin-top: .3rem;
+    user-select: none;
+  }

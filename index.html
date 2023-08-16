@@ -8,9 +8,30 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div id="sketch" class="container"></div>
-    <div class="grid">
+    <div id="sketchpad" class="content">
+        <div class="title">
+            Penrose's Humble Sketchpad
+        </div>
+        <div class="container">
+            <div class="controls">
+                <input type="color" name="" id="input-color">
+                <div class="recent-colors-container">
+                    <div class="recent-colors"></div>
+                </div>
+                
+                <p id="input-size-label">16 x 16</p>
+                <input type="range" value="16" min="16" max="100" id="input-size">
+                <button class="radio selected" id="draw">Draw</button>
+                <button class="radio" id="erase">Erase</button>
+                <button class="radio" id="rainbow">Rainbow</button>
+                <button class="radio" id="darken">Darken</button>
+                <button class="" id="clear">Clear</button>
+            </div>
+            <div class="grid">
 
+            </div>
+        </div>
+        
     </div>
 </body>
 </html>
